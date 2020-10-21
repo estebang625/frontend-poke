@@ -4,7 +4,7 @@ import Display from "./Display";
 import Form from "./Form";
 function App() {
     const url = "https://poke-daycare.herokuapp.com/"
-    const [poke, setpoke] = React.useState([])
+    const [poke, setPoke] = React.useState([])
     const emptyPoke = {
         name: "",
         evolved: "",
@@ -74,14 +74,14 @@ const [selectedPoke, setSelectedPoke] = React.useState(emptyPoke);
                 <Route exact path="/" render={(rp) => <Display {...rp} poke={poke} selectPoke={selectPoke} deletePoke={deletePoke}/>} />
                 <Route
                   exact
-                  path="/createpoke"
+                  path="/create"
                   render={(rp) => (
                     <Form {...rp} label="create" poke={emptyPoke} handleSubmit={handleCreate} />
                   )}
                 />
                 <Route
                   exact
-                  path="/editpoke"
+                  path="/edit"
                   render={(rp) => (
                     <Form {...rp} label="update" poke={selectedPoke} handleSubmit={handleUpdate} />
                   )}
